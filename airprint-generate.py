@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 """
 Copyright (c) 2010 Timothy J Fontaine <tjfontaine@atxconsulting.com>
@@ -43,7 +43,7 @@ except:
             from elementtree import Element, ElementTree, tostring
             etree = None
         except:
-            raise 'Failed to find python libxml or elementtree, please install one of those or use python >= 2.5'
+            raise Exception('Failed to find python libxml or elementtree, please install one of those or use python >= 2.5')
 
 XML_TEMPLATE = """<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
@@ -123,7 +123,7 @@ class AirPrintGenerate(object):
             
         printers = conn.getPrinters()
         
-        for p, v in printers.items():
+        for p, v in list(printers.items()):
             if v['printer-is-shared']:
                 attrs = conn.getPrinterAttributes(p)
                 uri = urllib.parse.urlparse(v['printer-uri-supported'])
