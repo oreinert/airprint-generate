@@ -71,6 +71,7 @@ DOCUMENT_TYPES = {
     'application/pdf': True,
     'application/postscript': True,
     'application/vnd.cups-postscript': True,
+    'application/vnd.cups-pdf': True,
     'application/vnd.cups-raster': True,
     'application/octet-stream': True,
     'image/urf': True,
